@@ -1,0 +1,20 @@
+{
+        "name": "killworm737/pdo",
+        "type": "library",
+        "description": "QrcodeInvoice",
+        "keywords": ["killworm737", "QrcodeInvoice"],
+        "homepage": "https://github.com/killworm737/QrcodeInvoice",
+        "license": ["MIT"],
+        "authors": [
+                {
+                        "name": "Kim Chen",
+                        "homepage": "https://github.com/killworm737"
+                }
+        ],
+        "require": {
+                "php": ">=5.4.0"
+        },
+        "autoload": {
+                "classmap": ["src"]
+        }
+}
