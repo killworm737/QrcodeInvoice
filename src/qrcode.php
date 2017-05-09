@@ -15,7 +15,7 @@ class Qrcode
         $iv_size = mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_CBC);
         $key = hex2bin($aesKey);
         $iv = base64_decode($this->spec_key);
-        $data = pkcs5_pad($invoice_random,$iv_size);
+        $data = self::pkcs5_pad($invoice_random,$iv_size);
 
         return base64_encode(
                     mcrypt_encrypt(
