@@ -21,5 +21,5 @@ $qrcodeClass = new Qrcode();
 
 $aesKey = "C03458ECE7485C884AC42D3ED8198A4C";// input your aeskey
 $invoiceNumAndRandomCode = "AA123456781234";// input your invoiceNumber And RandomCode
-$qrcodeClass->aes128_cbc_encrypt($keygen, $invoiceNumAndRandomCode);
+$qrcodeClass->aes128_cbc_encrypt($aesKey, $invoiceNumAndRandomCode);
 ```
