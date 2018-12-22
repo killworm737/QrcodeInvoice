@@ -12,6 +12,18 @@ class Qrcode
 
     public function aes128_cbc_encrypt($aesKey, $invoice_random)
     {
+        $key = hex2bin($aesKey);
+        $iv = base64_decode($this->spec_key);
+        $data = self::pkcs5_pad($invoice_random,16);
+        return base64_encode(
+                    openssl_encrypt(
+                      $data, 'AES-128-CBC', $key, OPENSSL_RAW_DATA | OPENSSL_ZERO_PADDING, $iv
+                    )
+                );
+    }
+
+    public function aes128_cbc_encrypt_mcrypt($aesKey, $invoice_random)
+    {
         $iv_size = mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_CBC);
         $key = hex2bin($aesKey);
         $iv = base64_decode($this->spec_key);
